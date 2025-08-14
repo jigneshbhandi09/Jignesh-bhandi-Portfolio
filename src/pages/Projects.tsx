@@ -7,7 +7,7 @@ const projects = [
     description:
       "A React + TypeScript app with three distinct themes, using Context API and Tailwind CSS for styling. Includes localStorage persistence and responsive UI.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "project1.png",
+    image: "/project1.png",
     link: "https://multi-theme-switcher-app-h4mn.vercel.app/",
   },
   {

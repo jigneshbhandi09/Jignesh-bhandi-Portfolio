@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-
 
 const projects = [
   {
@@ -40,7 +39,7 @@ const item = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut }, // fixed ease
   },
 };
 
@@ -64,7 +63,7 @@ export default function Projects() {
             transition={{
               repeat: Infinity,
               duration: 5 + i * 0.2,
-              ease: "easeInOut",
+              ease: [0.42, 0, 0.58, 1] as any, // fixed ease for TS
             }}
             style={{
               top: `${Math.random() * 100}%`,

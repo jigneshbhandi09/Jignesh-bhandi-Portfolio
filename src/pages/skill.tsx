@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { useState } from "react";
 
 // Skill data
@@ -15,7 +15,15 @@ const skills = [
 
 // Motion variants
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
-const item = { hidden: { opacity: 0, y: 30, scale: 0.8 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } } };
+const item = {
+  hidden: { opacity: 0, y: 30, scale: 0.8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: easeOut }, // fixed ease
+  },
+};
 
 export default function Skills() {
   // For parallax tilt
@@ -41,7 +49,7 @@ export default function Skills() {
             className="absolute w-1 h-1 bg-indigo-500 rounded-full"
             initial={{ opacity: 0.2, y: -10 }}
             animate={{ y: [0, 20, 0], opacity: [0.2, 0.8, 0.2] }}
-            transition={{ repeat: Infinity, duration: 6 + i * 0.2, ease: "easeInOut" }}
+            transition={{ repeat: Infinity, duration: 6 + i * 0.2, ease: [0.42, 0, 0.58, 1] }} // fixed ease
             style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` }}
           />
         ))}

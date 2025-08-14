@@ -38,7 +38,7 @@ export default function About() {
           className="flex justify-center"
         >
           <img
-            src="Screenshot 2025-05-16 102943.png"
+            src="/profile_photo.png"
             alt="Jignesh Bhandi"
             className="rounded-2xl shadow-lg shadow-yellow-500/30 hover:scale-105 transition-transform duration-300 border border-yellow-400/20"
           />

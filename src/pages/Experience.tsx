@@ -3,23 +3,30 @@ import { motion, easeOut } from "framer-motion";
 const experiences = [
   {
     role: "Software Developer",
-    company: "Muni",
-    duration: "July 2025 - Present",
-    description:
-      "Developed frontend features using React, TypeScript, and Tailwind CSS. Worked on multi-theme apps and responsive UI components.",
+    company: "mUniCampus",
+    duration: "Aug 2024 - Present",
+    description: [
+      "Contributed to an edtech platform enabling students to evaluate answer sheets, get feedback, and track progress.",
+      "Collaborated with backend, design, and QA teams to deliver high-quality features.",
+      "Developed a platform that simplifies monitoring and feedback between institutes and students.",
+      "Integrated REST APIs for real-time updates and accurate data display."
+    ],
   },
   {
-    role: "Intern",
-    company: "Auto Techno Solutions",
-    duration: "Jan 2025 - June 2025",
-    description:
-      "Worked on web applications, bug fixing, and enhancing user experience with modern web technologies.",
+    role: "Python Development Intern",
+    company: "CEI DESIGN CONSULTANCY",
+    duration: "May 2024 - Aug 2025",
+    description: [
+      " Supported the development of Python-based tools and automation scripts.",
+      " Gained hands-on experience in coding, debugging, and collaborating on small-scale projects.",
+      
+    ],
   },
 ];
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.15 } },
+  show: { transition: { staggerChildren: 0.2 } },
 };
 
 const item = {
@@ -45,7 +52,7 @@ export default function Experience() {
             className="absolute w-1.5 h-1.5 bg-pink-500 rounded-full"
             initial={{ opacity: 0.2, y: Math.random() * 200 }}
             animate={{
-              y: [0, -40, 0],
+              y: [0, -50, 0],
               opacity: [0.2, 0.7, 0.2],
             }}
             transition={{
@@ -62,7 +69,7 @@ export default function Experience() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 z-10">
+      <div className="relative max-w-5xl mx-auto px-6 z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -71,34 +78,60 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">My Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            My Experience
+          </h2>
           <p className="text-gray-400 mt-3">
-            Work history and professional roles I've held
+            A timeline of my professional journey
           </p>
         </motion.div>
 
-        {/* Experience List */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="flex flex-col gap-8"
-        >
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
-            >
-              <h3 className="text-2xl font-semibold">{exp.role}</h3>
-              <span className="text-gray-400 text-sm">
-                {exp.company} | {exp.duration}
-              </span>
-              <p className="mt-2 text-gray-300 text-sm">{exp.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Timeline */}
+        <div className="relative pl-8">
+          {/* Vertical Line */}
+          <span className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 via-purple-500/50 to-transparent rounded-full"></span>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="space-y-12"
+          >
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="relative flex flex-col md:flex-row md:items-center gap-6"
+              >
+                {/* Node */}
+                <span className="absolute -left-1 top-2 w-6 h-6 rounded-full bg-gradient-to-tr from-pink-500 to-purple-500 shadow-lg ring-4 ring-gray-900/80"></span>
+
+                {/* Card */}
+                <motion.div
+                  whileHover={{ scale: 1.03, rotate: 0.5 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-pink-500/20 transition-all duration-300 w-full"
+                >
+                  <h3 className="text-xl font-semibold">{exp.role}</h3>
+                  <span className="text-pink-400 text-sm font-medium">
+                    {exp.company}
+                  </span>
+                  <span className="block text-gray-400 text-xs mt-1">
+                    {exp.duration}
+                  </span>
+
+                  {/* Bullet points */}
+                  <ul className="mt-3 space-y-2 text-gray-300 text-sm list-disc list-inside">
+                    {exp.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -11,20 +11,20 @@ const projects = [
     link: "https://multi-theme-switcher-app-h4mn.vercel.app/",
   },
   {
-    title: "Real-Time ICU Monitoring",
+    title: "Real-Time ICU Patient Monitoring system",
     description:
       "A real-time patient monitoring system using MQTT protocol to send alerts and display patient data on a web interface.",
-    tech: ["HTML", "CSS", "JavaScript", "MQTT"],
-    image: "/images/icu-monitor.png",
-    link: "#",
+    tech: ["HTML", "CSS", "JavaScript", "MQTT", "Arduino"],
+    image: "/project2.png",
+    
   },
   {
-    title: "Portfolio Website",
+    title: "FPGA-Based PLC for Industrial Automation",
     description:
-      "Personal portfolio website built with HTML, CSS, and JavaScript, featuring responsive design and smooth animations.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    image: "/images/portfolio.png",
-    link: "#",
+      "Developed an FPGA-based programmable logic controller (PLC) to enhance industrial automation processes. ",
+    tech: ["Hardware Integration", "FPGA", "PLC", "ESP32", "Industrial Automation"],
+    image: "/project3.png",
+    // link: "",
   },
 ];
 

@@ -82,7 +82,7 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
             My Experience
           </h2>
-          <p className="text-gray-400 mt-3">A timeline of my professional journey</p>
+          <p className="text-gray-400 mt-3">A timeline a  of my professional journey</p>
         </motion.div>
 
         {/* Timeline */}

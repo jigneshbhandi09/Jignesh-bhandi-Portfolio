@@ -23,7 +23,7 @@ const education: Edu[] = [
   {
     degree: "Science",
     institution: "SSS Multipurpose Technical JR College",
-    period: "2018 – 2020",
+    period: "2018 – 2024",
   }
 ];
 
